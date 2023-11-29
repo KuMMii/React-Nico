@@ -14,7 +14,8 @@
 		function App() {
 			const [counter, setCounter] = React.useState(0);
 			const onClick = () => {
-				setCounter(counter + 1);
+				// setCounter(counter + 1); ->directly setting the state
+				setCounter((current) => current + 1); //setting a function for the state
 			};
 			return (
 				<div>

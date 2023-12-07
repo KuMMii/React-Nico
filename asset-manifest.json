@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/React-Nico/static/js/main.e8915bb8.js",
+    "main.css": "/React-Nico/static/css/main.7a5161ed.css",
+    "main.js": "/React-Nico/static/js/main.ac52e9ee.js",
     "index.html": "/React-Nico/index.html",
-    "main.e8915bb8.js.map": "/React-Nico/static/js/main.e8915bb8.js.map"
+    "main.7a5161ed.css.map": "/React-Nico/static/css/main.7a5161ed.css.map",
+    "main.ac52e9ee.js.map": "/React-Nico/static/js/main.ac52e9ee.js.map"
   },
   "entrypoints": [
-    "static/js/main.e8915bb8.js"
+    "static/css/main.7a5161ed.css",
+    "static/js/main.ac52e9ee.js"
   ]
 }

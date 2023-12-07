@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 function App() {
 	const [loading, setLoading] = useState(true);
 	const [coins, setCoins] = useState([]);
+	const [amount, setAmount] = useState(0);
+	const onChange = (event) => {
+		setAmount(event.target.value);
+	};
 	useEffect(() => {
 		fetch("https://api.coinpaprika.com/v1/tickers?limit=10")
 			.then((response) => response.json())
@@ -18,13 +22,19 @@ function App() {
 			{loading ? (
 				<strong>Loading...</strong>
 			) : (
-				<select>
-					{coins.map((coin) => (
-						<option key={coin.id}>
-							{coin.name} ({coin.symbol}) : ${coin.quotes.USD.price} USD
-						</option>
-					))}
-				</select>
+				<div>
+					<input type="number" placeholder="Type the amount" value={amount} onChange={onChange} />
+					<br />
+					<br />
+					<select>
+						{coins.map((coin) => (
+							<option key={coin.id}>
+								{coin.name} ({coin.symbol}) : $
+								{amount === 0 ? coin.quotes.USD.price : coin.quotes.USD.price / amount} USD
+							</option>
+						))}
+					</select>
+				</div>
 			)}
 		</div>
 	);
